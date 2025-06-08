@@ -60,4 +60,4 @@
 
 1. Download or clone this repo:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/metamate.git
+   [git clone https://github.com/YOUR_USERNAME/metamate.git](https://github.com/allibahari/Bulk-SEO-Updater.git)
