@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bulk SEO Updater
  * Description: آپدیت انبوه سئو از فایل اکسل برای Yoast و Rank Math
- * Version: 2.2
+ * Version: 2.2.1
  * Author: Ali Bahari
  */
 
