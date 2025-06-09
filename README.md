@@ -1,63 +1,54 @@
-# 📦 MetaMate – SEO Bulk Updater for WordPress
+# 📦 MetaMate – افزونه بروزرسانی گروهی سئو برای وردپرس
 
-> 🚀 Powerful & easy-to-use plugin to bulk update SEO meta titles and descriptions from Excel (.xlsx)  
-> ✅ Supports **Yoast SEO** and **Rank Math**  
-> 📦 Fully standalone – No Composer required
+> 🚀 افزونه‌ای قدرتمند و ساده برای بروزرسانی گروهی عنوان و توضیح متای سئو با فایل Excel (.xlsx)  
+> ✅ پشتیبانی از **Yoast SEO** و **Rank Math**  
+> 📦 کاملاً مستقل – بدون نیاز به Composer
 
-🔁 Update hundreds of posts with one click  
-🇮🇷 Persian interface + Jalali dates  
-📝 Clean logs with detailed changes
-
----
-
-## 📸 Screenshots / تصاویر
-
-| Upload Excel File | View Change Log |
-|-------------------|------------------|
-| ![Upload Excel](https://github.com/user-attachments/assets/f43e6c14-4fea-4799-b980-b6d9067c6667)
-| ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
+🔁 بروزرسانی صدها نوشته تنها با یک کلیک  
+🇮🇷 رابط فارسی + تاریخ شمسی  
+📝 گزارش‌های دقیق از تغییرات انجام‌شده
 
 ---
 
-## 🔧 What It Does / کاربرد افزونه
+## 📸 تصاویر محیط افزونه
 
-**MetaMate** lets you:
-
-- Bulk update SEO **Meta Titles** and **Meta Descriptions**  
-- Supports both **Yoast SEO** and **Rank Math**  
-- Upload an Excel file with post URLs and new SEO values  
-- View full logs with Jalali (Persian) timestamps  
-- Use an intuitive, Persian-friendly UI  
-
-**متامت (MetaMate)** به شما امکان می‌دهد:
-
-- عنوان و توضیحات متای سئو را به صورت گروهی بروزرسانی کنید  
-- از دو افزونه معروف Yoast SEO و Rank Math پشتیبانی می‌کند  
-- تنها با یک فایل اکسل اطلاعات را بارگذاری کنید  
-- تغییرات را با تاریخ شمسی مشاهده کنید  
-- رابط کاربری فارسی و ساده دارد
+| بارگذاری فایل اکسل | مشاهده گزارش تغییرات |
+|---------------------|------------------------|
+| ![Upload Excel](https://github.com/user-attachments/assets/f43e6c14-4fea-4799-b980-b6d9067c6667) | ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
 
 ---
 
-## 📁 Excel Format / فرمت فایل اکسل
+## 🔧 عملکرد افزونه
 
-### Structure / ساختار:
+**MetaMate** به شما امکان می‌دهد:
 
-| URL | New Title | New Description |
-|-----|-----------|------------------|
-| `https://example.com/post` | `Sample Title` | `Sample Description` |
-
-### Notes / نکات:
-
-- First column must be the full post/page URL  
-- Second and third columns are for the new title and description  
-- If a cell is empty, that field won’t be updated
+- عنوان و توضیحات متای سئو را به‌صورت گروهی بروزرسانی کنید  
+- از هر دو افزونه **Yoast SEO** و **Rank Math** پشتیبانی می‌کند  
+- تنها با بارگذاری یک فایل اکسل، متاها را تغییر دهید  
+- لاگ کامل تغییرات را با **تاریخ شمسی** مشاهده کنید  
+- از رابط کاربری فارسی و ساده لذت ببرید
 
 ---
 
-## 🧩 Installation / نصب
+## 📁 فرمت فایل اکسل
 
-1. Download or clone the repo:
+### ساختار فایل:
+
+| URL | عنوان جدید | توضیح جدید |
+|-----|-------------|-------------|
+| `https://example.com/post` | `عنوان نمونه` | `توضیح نمونه` |
+
+### نکات مهم:
+
+- ستون اول باید آدرس کامل نوشته یا برگه باشد  
+- ستون دوم برای عنوان جدید و ستون سوم برای توضیح جدید است  
+- اگر یکی از سلول‌ها خالی باشد، آن فیلد بروزرسانی نخواهد شد
+
+---
+
+## 🧩 نصب افزونه
+
+1. این مخزن را دانلود یا کلون کنید:
 
 ```bash
 git clone https://github.com/allibahari/metamate.git
