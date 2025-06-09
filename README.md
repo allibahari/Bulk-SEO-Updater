@@ -80,23 +80,22 @@ MetaMate allows you to:
 - اگر یکی از سلول‌ها خالی باشد، آن بخش بروزرسانی نمی‌شود
 
 ---
-
 ## 🧩 Installation / نصب
 
 ### English
 
 1. Download the plugin zip file:  
+   🔗 [Download Plugin – Direct Link](https://tuxman.ir/plugin/MetaMete.zip)  
+2. Go to your WordPress dashboard → Plugins → Add New → Upload Plugin  
+3. Select the ZIP file and install  
+4. Activate the plugin and access the **MetaMate** panel
 
-🔗 [Download Plugin – دانلود مستقیم](https://tuxman.ir/plugin/MetaMete.zip)
-2. Upload it to WordPress via Plugins > Add New > Upload Plugin  
-3. Activate the plugin and go to MetaMate panel
+---
 
 ### فارسی
 
-۱. فایل زیپ افزونه را دانلود کنید:  
-
-🔗 [Download Plugin – دانلود مستقیم](https://tuxman.ir/plugin/MetaMete.zip) 
-۲. از بخش افزونه‌ها > افزودن > بارگذاری افزونه در وردپرس نصب کنید  
-۳. افزونه را فعال کرده و وارد پنل MetaMate شوید
-
----
+۱. فایل ZIP افزونه را از لینک زیر دانلود کنید:  
+   🔗 [دانلود افزونه – لینک مستقیم](https://tuxman.ir/plugin/MetaMete.zip)  
+۲. وارد پیشخوان وردپرس شوید ← افزونه‌ها ← افزودن ← بارگذاری افزونه  
+۳. فایل ZIP را انتخاب و نصب کنید  
+۴. افزونه را فعال کرده و وارد پنل **MetaMate** شوید
