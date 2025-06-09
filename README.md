@@ -86,14 +86,16 @@ MetaMate allows you to:
 ### English
 
 1. Download the plugin zip file:  
-   [https://tuxman.ir/plugin/MetaMete.zip](https://tuxman.ir/plugin/MetaMete.zip)  
+
+🔗 [Download Plugin – دانلود مستقیم](https://tuxman.ir/plugin/MetaMete.zip)
 2. Upload it to WordPress via Plugins > Add New > Upload Plugin  
 3. Activate the plugin and go to MetaMate panel
 
 ### فارسی
 
 ۱. فایل زیپ افزونه را دانلود کنید:  
-   [https://tuxman.ir/plugin/MetaMete.zip](https://tuxman.ir/plugin/MetaMete.zip)  
+
+🔗 [Download Plugin – دانلود مستقیم](https://tuxman.ir/plugin/MetaMete.zip) 
 ۲. از بخش افزونه‌ها > افزودن > بارگذاری افزونه در وردپرس نصب کنید  
 ۳. افزونه را فعال کرده و وارد پنل MetaMate شوید
 
