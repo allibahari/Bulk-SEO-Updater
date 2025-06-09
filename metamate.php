@@ -90,7 +90,7 @@ function bsu_upload_page() {
 </form>
 
 <div id="bsu-loader" style="display:none; text-align: center; margin-top: 20px;">
-   <img src="img/loding.gif" width="50" alt="در حال پردازش..." />
+   <img src="/img/loding.gif" width="50" alt="در حال پردازش..." />
    <p>در حال پردازش فایل، لطفاً صبر کنید...</p>
 </div>
 
