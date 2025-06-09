@@ -1,12 +1,23 @@
-# 📦 MetaMate – SEO Bulk Updater for WordPress
+# 📦 MetaMate – SEO Bulk Updater for WordPress  
+**متامت – افزونه بروزرسانی گروهی متای سئو برای وردپرس**
 
-> 🚀 Powerful & easy-to-use plugin to bulk update SEO meta titles and descriptions from Excel (.xlsx)  
-> ✅ Supports **Yoast SEO** and **Rank Math**  
-> 📦 Fully standalone – No Composer required
+> 🚀 A powerful and easy-to-use plugin to bulk update SEO meta titles and descriptions using Excel (.xlsx)  
+> 🚀 افزونه‌ای قدرتمند و آسان برای بروزرسانی گروهی عنوان و توضیحات متای سئو با استفاده از فایل اکسل
+
+✅ Supports **Yoast SEO** and **Rank Math**  
+✅ پشتیبانی از افزونه‌های **Yoast SEO** و **Rank Math**
+
+📦 Fully standalone – No Composer required  
+📦 کاملاً مستقل – بدون نیاز به Composer
 
 🔁 Update hundreds of posts with one click  
+🔁 بروزرسانی صدها پست تنها با یک کلیک
+
 🇮🇷 Persian interface + Jalali dates  
-📝 Clean logs with detailed changes
+🇮🇷 رابط کاربری فارسی + تاریخ شمسی
+
+📝 Clean logs with detailed changes  
+📝 لاگ‌های دقیق با جزئیات کامل تغییرات
 
 ---
 
@@ -14,49 +25,61 @@
 
 | Upload Excel File | View Change Log |
 |-------------------|------------------|
-| ![Upload Excel](https://github.com/user-attachments/assets/48a1f436-ee1d-4340-9160-832e33527e50) | ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
+| ![Upload Excel](https://github.com/user-attachments/assets/f43e6c14-4fea-4799-b980-b6d9067c6667) | ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
 
 ---
 
-## 🔧 What It Does / کاربرد افزونه
+## 🔧 What It Does / عملکرد افزونه
 
-**MetaMate** lets you:
+### English  
+MetaMate allows you to:  
+- Bulk update **meta titles** and **meta descriptions** for posts/pages  
+- Use either **Yoast SEO** or **Rank Math**  
+- Upload a simple Excel file with your data  
+- See all changes in clean logs with Jalali (Persian) timestamps  
+- Use a clean and intuitive Persian-friendly UI
 
-- Bulk update SEO **Meta Titles** and **Meta Descriptions**  
-- Supports both **Yoast SEO** and **Rank Math**  
-- Upload an Excel file with post URLs and new SEO values  
-- View full logs with Jalali (Persian) timestamps  
-- Use an intuitive, Persian-friendly UI  
-
-**متامت (MetaMate)** به شما امکان می‌دهد:
-
-- عنوان و توضیحات متای سئو را به صورت گروهی بروزرسانی کنید  
-- از دو افزونه معروف Yoast SEO و Rank Math پشتیبانی می‌کند  
-- تنها با یک فایل اکسل اطلاعات را بارگذاری کنید  
-- تغییرات را با تاریخ شمسی مشاهده کنید  
-- رابط کاربری فارسی و ساده دارد
+### فارسی  
+افزونه MetaMate به شما امکان می‌دهد:  
+- عنوان و توضیح متای سئو را به‌صورت گروهی بروزرسانی کنید  
+- از دو افزونه سئوی معروف Yoast SEO و Rank Math پشتیبانی می‌کند  
+- با یک فایل اکسل ساده، متاها را بارگذاری و جایگزین کنید  
+- تمامی تغییرات را با تاریخ شمسی در لاگ مشاهده کنید  
+- رابط کاربری ساده، فارسی و کاربرپسند دارد
 
 ---
 
 ## 📁 Excel Format / فرمت فایل اکسل
 
-### Structure / ساختار:
+### English Format:
 
 | URL | New Title | New Description |
 |-----|-----------|------------------|
 | `https://example.com/post` | `Sample Title` | `Sample Description` |
 
-### Notes / نکات:
+- First column: full URL of post or page  
+- Second column: new meta title  
+- Third column: new meta description  
+- Leave a cell empty to skip updating that field
 
-- First column must be the full post/page URL  
-- Second and third columns are for the new title and description  
-- If a cell is empty, that field won’t be updated
+### فرمت فارسی:
+
+| آدرس | عنوان جدید | توضیح جدید |
+|------|-------------|--------------|
+| `https://example.com/post` | `عنوان نمونه` | `توضیح نمونه` |
+
+- ستون اول: آدرس کامل نوشته یا برگه  
+- ستون دوم: عنوان متای جدید  
+- ستون سوم: توضیح متای جدید  
+- اگر یکی از سلول‌ها خالی باشد، آن بخش بروزرسانی نمی‌شود
 
 ---
 
 ## 🧩 Installation / نصب
 
-1. Download or clone the repo:
+### English
+
+1. Clone or download this repo:
 
 ```bash
 git clone https://github.com/allibahari/metamate.git
