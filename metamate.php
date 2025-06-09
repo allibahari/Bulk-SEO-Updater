@@ -93,19 +93,14 @@ function bsu_upload_page() {
    <img src="/img/loding.gif" width="50" alt="در حال پردازش..." />
    <p>در حال پردازش فایل، لطفاً صبر کنید...</p>
 </div>
-
 <!-- نوار پیشرفت -->
 <div id="bsu-progress-container" style="display:none; margin-top: 20px; background: #eee; border-radius: 6px; width: 100%; height: 20px;">
     <div id="bsu-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(45deg, #3498db, #2980b9); border-radius: 6px;"></div>
 </div>
-
 <!-- محل نمایش نتیجه آپلود -->
 <div id="bsu-upload-result" style="margin-top:20px;"></div>
-
         <?php bsu_handle_upload(); ?>
-
         <hr style="margin: 40px 0;">
-
         <div id="bsu-log-section">
             <h2 style="font-family: vazirmatn , sans-serif;">لاگ‌های ثبت‌شده</h2>
             <?php
@@ -141,18 +136,15 @@ function bsu_upload_page() {
             }
             ?>
         </div>
-
         <p style="margin-top: 30px; text-align: center; font-size: 14px; color: #999;">
             طراحی شده توسط علی بهاری | نسخه ۲.۳
         </p>
     </div>
-
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
     <script>
         document.getElementById('bsu-upload-form').addEventListener('submit', function () {
             document.getElementById('bsu-loader').style.display = 'block';
         });
-
         document.addEventListener('click', function (e) {
             if (e.target && e.target.classList.contains('bsu-toggle-btn')) {
                 const urlBox = e.target.nextElementSibling;
@@ -165,7 +157,6 @@ function bsu_upload_page() {
                 }
             }
         });
-
         document.getElementById('seo_file').addEventListener('change', function () {
             const label = document.getElementById('file-selected-msg');
             if (this.files.length > 0) {
@@ -175,7 +166,6 @@ function bsu_upload_page() {
             }
         });
     </script>
-
     <style>
         body, input, button, select {
             font-family: 'Vazirmatn', sans-serif !important;
@@ -213,8 +203,6 @@ function bsu_upload_page() {
     </style>
     <?php
 }
-
-
 function bsu_handle_upload() {
     if (!isset($_POST['upload']) || !isset($_FILES['seo_file'])) return;
 
@@ -222,37 +210,29 @@ function bsu_handle_upload() {
         echo "<div class='error'><p>خطا در آپلود فایل.</p></div>";
         return;
     }
-
     $file_path = $_FILES['seo_file']['tmp_name'];
     $xlsx = new SimpleXLSX($file_path);
     $rows = $xlsx->rows();
-
     $log = [["URL", "Type", "Old Title", "New Title", "Old Description", "New Description", "Status", "Time"]];
-
     foreach ($rows as $i => $row) {
         if ($i == 0) continue;
-
         list($url, $new_title, $new_desc) = array_pad($row, 3, null);
         $url = filter_var(trim($url), FILTER_SANITIZE_URL);
         $new_title = sanitize_text_field(trim($new_title ?? ''));
         $new_desc = sanitize_textarea_field(trim($new_desc ?? ''));
-
         if (empty($url)) {
             $log[] = ["Empty URL", "N/A", "N/A", $new_title, "N/A", $new_desc, "Error: URL is empty", current_time('mysql')];
             continue;
         }
-
         $post_id = url_to_postid($url);
         $status = "Fail";
         $type = "Unknown";
         $old_title = "";
         $old_desc = "";
-
         if ($post_id) {
             $post = get_post($post_id);
             $type = $post->post_type;
             $seo_plugin_updated = false;
-
             if (defined('WPSEO_VERSION')) {
                 $old_title = get_post_meta($post_id, '_yoast_wpseo_title', true);
                 $old_desc = get_post_meta($post_id, '_yoast_wpseo_metadesc', true);
@@ -261,7 +241,6 @@ function bsu_handle_upload() {
                 $status = "Success (Yoast)";
                 $seo_plugin_updated = true;
             }
-
             if (defined('RANK_MATH_VERSION')) {
                 if (!$seo_plugin_updated) {
                     $old_title = get_post_meta($post_id, 'rank_math_title', true);
@@ -278,13 +257,10 @@ function bsu_handle_upload() {
         } else {
             $status = "Post not found";
         }
-
         $log[] = [$url, $type, $old_title, $new_title, $old_desc, $new_desc, $status, current_time('mysql')];
     }
-
     $log_file_path = plugin_dir_path(__FILE__) . 'bsu-log.csv';
     $fp = @fopen($log_file_path, 'w');
-
     if ($fp !== false) {
         fwrite($fp, "\xEF\xBB\xBF");
         foreach ($log as $line) {
@@ -306,24 +282,17 @@ document.getElementById('seo_file').addEventListener('change', function () {
         label.textContent = '';
     }
 });
-
 document.getElementById('bsu-upload-form').addEventListener('submit', function(e) {
     e.preventDefault(); // جلوگیری از ارسال فرم به صورت معمول
-
     const form = e.target;
     const fileInput = document.getElementById('seo_file');
-
     if (fileInput.files.length === 0) {
         alert('لطفاً فایل اکسل را انتخاب کنید.');
         return;
     }
-
     const formData = new FormData(form);
-
     const xhr = new XMLHttpRequest();
-
     xhr.open('POST', '', true); // ارسال به همان صفحه (صفحه مدیریت)
-
     xhr.upload.onprogress = function(e) {
         if (e.lengthComputable) {
             const percent = (e.loaded / e.total) * 100;
@@ -333,14 +302,12 @@ document.getElementById('bsu-upload-form').addEventListener('submit', function(e
             progressBar.style.width = percent + '%';
         }
     };
-
     xhr.onloadstart = function() {
         document.getElementById('bsu-loader').style.display = 'block';
         document.getElementById('bsu-upload-result').innerHTML = '';
         document.getElementById('bsu-progress-container').style.display = 'block';
         document.getElementById('bsu-progress-bar').style.width = '0%';
     };
-
     xhr.onload = function() {
         document.getElementById('bsu-loader').style.display = 'none';
 
@@ -352,12 +319,10 @@ document.getElementById('bsu-upload-form').addEventListener('submit', function(e
             document.getElementById('bsu-upload-result').innerHTML = '<div class="error"><p>خطا در آپلود فایل.</p></div>';
         }
     };
-
     xhr.onerror = function() {
         document.getElementById('bsu-loader').style.display = 'none';
         document.getElementById('bsu-upload-result').innerHTML = '<div class="error"><p>خطا در آپلود فایل.</p></div>';
     };
-
     xhr.send(formData);
 });
 </script>
