@@ -1,10 +1,17 @@
 <?php
-/**
- * Plugin Name: MetaMete
- * Description: آپدیت انبوه سئو از فایل اکسل برای Yoast و Rank Math
- * Version: 2.2.1
- * Author: Ali Bahari
- */
+/*
+Plugin Name: MetaMate – SEO Bulk Updater for WordPress
+Plugin URI: https://yourwebsite.com/alibahari
+Description: Bulk update SEO meta titles and descriptions via Excel (.xlsx) for Yoast SEO and Rank Math.
+Version: 2.2.2
+Author: Ali Bahari
+Author URI: https://tuxman.ir
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: metamate
+Domain Path: /languages
+*/
+
 
 if (!defined('ABSPATH')) exit;
 
