@@ -15,7 +15,7 @@
 | Upload Excel File | View Change Log |
 |-------------------|------------------|
 | ![Upload Excel](https://github.com/user-attachments/assets/f43e6c14-4fea-4799-b980-b6d9067c6667)
-) | ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
+| ![View Log](https://github.com/user-attachments/assets/d5d9a88b-1ec0-4b08-9e53-e5bf3ef5e67e) |
 
 ---
 
