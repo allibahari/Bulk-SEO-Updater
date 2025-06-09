@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: MetaMate – SEO Bulk Updater for WordPress
-Plugin URI: https://yourwebsite.com/alibahari
+Plugin URI: https://tuxman.com/allibahari
 Description: Bulk update SEO meta titles and descriptions via Excel (.xlsx) for Yoast SEO and Rank Math.
 Version: 2.3
 Author: Ali Bahari
