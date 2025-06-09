@@ -61,7 +61,7 @@ function gregorian_to_jalali_str($gdate) {
 }
 
 add_action('admin_menu', function () {
-    add_menu_page('SEO Bulk Update', 'SEO Bulk Update', 'manage_options', 'seo-bulk-update', 'bsu_upload_page');
+    add_menu_page('Meta-Mate', 'Meta-Mate', 'manage_options', 'Meta-Mate', 'bsu_upload_page');
 });
 
 function bsu_upload_page() {
@@ -90,7 +90,7 @@ function bsu_upload_page() {
 </form>
 
 <div id="bsu-loader" style="display:none; text-align: center; margin-top: 20px;">
-   <img src="https://cdn.jsdelivr.net/gh/CodeByAli/loading-files/spinner-blue.svg" width="50" alt="در حال پردازش..." />
+   <img src="img/loding.gif" width="50" alt="در حال پردازش..." />
    <p>در حال پردازش فایل، لطفاً صبر کنید...</p>
 </div>
 
