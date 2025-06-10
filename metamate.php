@@ -11,64 +11,47 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: metamate
 Domain Path: /languages
 */
-
-
 if (!defined('ABSPATH')) exit;
-
 require_once plugin_dir_path(__FILE__) . 'simplexlsx.class.php';
-
 function gregorian_to_jalali_str($gdate) {
     if (!$gdate) return '';
     $datetime_parts = explode(' ', $gdate);
     $date_part = $datetime_parts[0];
     $time_part = $datetime_parts[1] ?? '';
-
     list($gy, $gm, $gd) = array_map('intval', explode('-', $date_part));
     if ($gy == 0 || $gm == 0 || $gd == 0) return '';
-
     $g_days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31];
     $j_days_in_month = [31,31,31,31,31,31,30,30,30,30,30,29];
-
     $gy2 = $gy - 1600;
     $gm2 = $gm - 1;
     $gd2 = $gd - 1;
-
     $g_day_no = 365*$gy2 + floor(($gy2+3)/4) - floor(($gy2+99)/100) + floor(($gy2+399)/400);
     for ($i=0; $i < $gm2; ++$i) $g_day_no += $g_days_in_month[$i];
     if ($gm > 2 && (($gy % 4 == 0 && $gy % 100 != 0) || ($gy % 400 == 0))) $g_day_no++;
     $g_day_no += $gd2;
-
     $j_day_no = $g_day_no - 79;
-
     $j_np = floor($j_day_no / 12053);
     $j_day_no %= 12053;
-
     $jy = 979 + 33 * $j_np + 4 * floor($j_day_no / 1461);
-    $j_day_no %= 1461;
-
+    $j_day_no %= 1461
     if ($j_day_no >= 366) {
         $jy += floor(($j_day_no - 1) / 365);
         $j_day_no = ($j_day_no - 1) % 365;
     }
-
     for ($i = 0; $i < 11 && $j_day_no >= $j_days_in_month[$i]; ++$i) {
         $j_day_no -= $j_days_in_month[$i];
     }
     $jm = $i + 1;
     $jd = $j_day_no + 1;
-
     return sprintf('%04d/%02d/%02d %s', $jy, $jm, $jd, $time_part);
 }
-
 add_action('admin_menu', function () {
     add_menu_page('Meta-Mate', 'Meta-Mate', 'manage_options', 'Meta-Mate', 'bsu_upload_page');
 });
-
 function bsu_upload_page() {
     ?>
     <div class="wrap" style="max-width: 800px; margin: 50px auto; font-family: vazirmatn; background:#fff; padding: 40px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.05); font-family: 'Vazirmatn', sans-serif;">
         <h1 style="font-family: vazirmatn , sans-serif , 'Courier New', Courier, monospace;">بروزرسانی گروهی سئو (MetaMate)</h1>
-
         <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 30px;">
             <h2 style="margin-top:0; font-family: vazirmatn;">راهنمای استفاده از افزونه</h2>
             <ol style="font-size: 15px; line-height: 1.8;">
@@ -78,7 +61,6 @@ function bsu_upload_page() {
                 <li>تغییرات در متای Yoast SEO یا Rank Math اعمال می‌شوند و لاگ در پایین قابل مشاهده است.</li>
             </ol>
         </div>
-
        <form id="bsu-upload-form" method="post" enctype="multipart/form-data">
     <label for="seo_file" class="bsu-file-label" style="display:inline-block; padding:12px 28px; background: linear-gradient(45deg, #3498db, #2980b9); color:#fff; border-radius:8px; cursor:pointer; font-size:16px; font-weight:600; user-select:none;">
         انتخاب فایل اکسل (xlsx)
@@ -88,7 +70,6 @@ function bsu_upload_page() {
     <br><br>
     <input type="submit" name="upload" class="button-primary bsu-submit-btn" value="آپلود و اجرا" style="font-family: 'Vazirmatn', sans-serif; font-size:16px; padding: 12px 28px; border-radius:8px; cursor:pointer; border:none; background: linear-gradient(45deg, #3498db, #2980b9); color:#fff;">
 </form>
-
 <div id="bsu-loader" style="display:none; text-align: center; margin-top: 20px;">
    <img src="/img/loding.gif" width="50" alt="در حال پردازش..." />
    <p>در حال پردازش فایل، لطفاً صبر کنید...</p>
@@ -205,7 +186,6 @@ function bsu_upload_page() {
 }
 function bsu_handle_upload() {
     if (!isset($_POST['upload']) || !isset($_FILES['seo_file'])) return;
-
     if ($_FILES['seo_file']['error'] !== UPLOAD_ERR_OK) {
         echo "<div class='error'><p>خطا در آپلود فایل.</p></div>";
         return;
