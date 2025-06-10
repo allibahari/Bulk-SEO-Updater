@@ -290,7 +290,6 @@ document.getElementById('bsu-upload-form').addEventListener('submit', function(e
     };
     xhr.onload = function() {
         document.getElementById('bsu-loader').style.display = 'none';
-
         if (xhr.status >= 200 && xhr.status < 300) {
             // قرار دادن نتیجه در div مخصوص نمایش نتیجه
             document.getElementById('bsu-upload-result').innerHTML = xhr.responseText;
