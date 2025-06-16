@@ -121,5 +121,4 @@ Upgrade to version 1.0.0 for full Persian support and Excel bulk upload feature.
 == License ==
 
 MetaMate is free software, licensed under the GPLv2 or later.
-
 ---
